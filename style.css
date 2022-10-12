@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+/*Es la font family que usan: Montserrat
+-Titulo y categoria: weight->800
+-Filtros y footer: weight->400
+-Los mas populares y nombres de pizza en card: weight->500
+-Subtitulo de la card: weight->400
+-Precios: weight->700
+-botones: weight->600
+
+-Tus productos, subtotal, envio, total: weight->500
+-Comprar: weight->700
+*/
+
+:root{
+    --dark-black: #252525;
+    --yellow: #ffa400;
+    --red: #fc2933;  
+    --white: #ffffff;   
+    --gray: #4d4d4d;   
+    --gradient-yellow: #ffa100;
+    --gradient-red: #fb103d;
+}
+/*Paleta de colores que tenemos que utilizar, los ultimos dos son para hacer el gradient*/
+
