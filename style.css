@@ -335,7 +335,7 @@ nav {
 }
 
 .precio button {
-    background: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
+    background: linear-gradient(to right,var(--gradient-yellow), var(--gradient-red));
     border-radius: 17px;
     color: #fff;
     border: none;
@@ -372,7 +372,7 @@ footer {
 }
 
 .nosotros .color {
-    color: red;
+    color: #f00;
 }
 
 .nosotros .text {
