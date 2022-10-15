@@ -10,24 +10,195 @@
 <body>
     <main class="main-container">
     <Header>
-        <img src="/E5-JS/assets/menu-hamburguesa-despliegue-img/hamburguesa.png" alt="menu-icon"> <!--aca va el boton de despliegue del menu hamburguesa-->
-        <img src="/E5-JS/assets/nav-icons/nucbazappiicon 1.png" alt="logo">
+        <img src="./assets/nav-icons/nucbazappiicon 1.png" alt="logo">
+        <img class="menu-hamburguesa" src="./assets/menu-hamburguesa-despliegue-img/hamburguesa.png" alt="menu-icon"> <!--aca va el boton de despliegue del menu hamburguesa-->
 
         <nav>
             <div class="navbar__cart-icon">
                 <div class="home-icon-container">
-                    <img src="/E5-JS/assets/nav-icons/Home.png" alt="home-icon">
+                    <img src="./assets/nav-icons/Home.png" alt="home-icon">
                     <a href="#">Home</a>
                 </div>
                 <div class="navbar__cart">
-                    <div class="navbar__cart--notification">4</div>
-                    <img src="/E5-JS/assets/nav-icons/Buy.png" alt="">
+                    <!-- <div class="navbar__cart--notification">4</div> -->
+                    <img src="./assets/nav-icons/Buy.png" alt="">
                 </div>
-                <img src="/E5-JS/assets/nav-icons/Profile.png" alt="">
+                <img class="user" src="./assets/nav-icons/Profile.png" alt="">
             </div>
         </nav>
     </Header>
-        
+        <section class="container-info">
+            <div class="info">
+                <h1>Si tenes Zappi, <span class="nucba">tenes Nucba.</span></h1>
+                <p>Buscá lo que quieras y nucba te quedes sin comida.</p>
+                <button>Ver más</button>
+            </div>
+            <div class="info-img">
+                <img class="pizza1" src="./assets/filter-icons/image 34.png" alt="">
+                <img class="pizza-absolute" src="./assets/filter-icons/pizza 2.png" alt="">
+            </div>
+        </section>
+        <section class="container-recomendaciones">
+            <h2>Hoy te recomendamos</h2>
+            <div class="cards-recom">
+                <div class="card">
+                    <img src="./assets/reco-img/Photo Menu.png" alt="">
+                    <div class="card-text">
+                        <h3>Bennazianna</h3>
+                        <p>La más completa</p>
+                        <span class="color">$3650</span>
+                    </div>
+                    <button>Agregar</button>
+                </div>
+                <div class="card">
+                    <img src="./assets/reco-img/Photo Menu-1.png" alt="">
+                    <div class="card-text">
+                        <h3>Tronco-Pizza</h3>
+                        <p>Para todo el día</p>
+                        <span class="color">$870</span>
+                    </div>
+                    <button>Agregar</button>
+                </div>
+                <div class="card">
+                    <img src="./assets/reco-img/Photo Menu-2.png" alt="">
+                    <div class="card-text">
+                        <h3>Papas | Provenzal</h3>
+                        <p>Van como piña</p>
+                        <span class="color">$360</span>
+                    </div>
+                    <button>Agregar</button>
+                </div>
+            </div>
+        </section>
+        <section class="container-categories">
+            <h2>Categorias</h2>
+            <div class="container-cards-category">
+                <div class="category active">
+                    <img src="./assets/filter-icons/pizza 2.png" alt="">
+                    <h3>Populares</h3>
+                    <div class="rectangulito"></div>
+                </div>
+                <div class="category" data-category="pizzas">
+                    <img src="./assets/filter-icons/image 34.png" alt="">
+                    <h3>Pizzas</h3>
+                    <div class="rectangulito"></div>
+                </div>
+                <div class="category" data-category="hamburguesas">
+                    <img src="./assets/filter-icons/burger 1.png" alt="">
+                    <h3>Hamburguesas</h3>
+                    <div class="rectangulito"></div>
+                </div>
+                <div class="category" data-category="napapuki">
+                    <img src="./assets/filter-icons/fries 2.png" alt="">
+                    <h3>Napapuki</h3>
+                    <div class="rectangulito"></div>
+                </div>
+                <div class="category" data-category="wraps">
+                    <img src="./assets/filter-icons/buritto 1.png" alt="">
+                    <h3>Wraps</h3>
+                    <div class="rectangulito"></div>
+                </div>
+                <div class="category" data-category="mexican-food">
+                    <img src="./assets/filter-icons/taco 1.png" alt="">
+                    <h3>Mexican Food</h3>
+                    <div class="rectangulito"></div>
+                </div>
+                <div class="category" data-category="batidos">
+                    <img src="./assets/filter-icons/float 1.png" alt="">
+                    <h3>Batidos</h3>
+                    <div class="rectangulito"></div>
+                </div>
+            </div>
+
+            <div class="container-comida">
+                <h2>Los más populares</h2>
+                <div class="container-cards-comida">
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="cards-comida">
+                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
+                        <h3>La Mr. Pit</h3>
+                        <p>Solo para expertos</p>
+                        <div class="precio">
+                            <span class="color">$350</span>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-text">
+                <a href="#">Términos de Uso</a>
+                <a href="#">Trabajá con Nosotros</a>
+                <a href="#">Soporte</a>
+            </div>
+            <div class="nosotros">
+                <p>Hecho con <span class="color">❤</span> en <span class="text">NUCBAZAPPI</span></p>
+            </div>
+        </footer>
     </main>
 
 
