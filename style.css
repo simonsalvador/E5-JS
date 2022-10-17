@@ -123,7 +123,7 @@ nav {
     background: linear-gradient(to right,var(--gradient-yellow), var(--gradient-red));
     color: #fff;
     border: none;
-    box-shadow: 11px 45px 35px rgb(20 78 90 / 20%);
+    box-shadow: 11px 28px 20px rgb(20 78 90 / 20%);
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -172,7 +172,7 @@ nav {
     background: var(--dark-black);
     padding: 15px;
     border-radius: 15px;
-    box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+    box-shadow: 0px 0px 8px rgba(1, 2, 7, 0.5);
     width: 352px;
 }
 
@@ -263,7 +263,7 @@ nav {
     height: 4px;
     background: linear-gradient(to right,var(--gradient-yellow), var(--gradient-red));
     border-radius: 15px;
-    box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+    /* box-shadow: 0px 0px 90px rgba(1, 2, 7, 0.5); */
 }
 
 .container-comida {
