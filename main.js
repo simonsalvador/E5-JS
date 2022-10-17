@@ -1,6 +1,7 @@
 const categories = document.querySelector('.container-cards-category');
 const categoriesList = document.querySelectorAll('.category');
 const renderFood = document.querySelector('.container-cards-comida');
+const title = document.getElementById('title');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -34,8 +35,6 @@ const renderFilteredFood = (category) => {
       (food) => food.category === category
     );
     renderFood.innerHTML = foodList.map(renderCard).join("");
-    console.log(carta)
-    console.log(foodList)
 };
 
 const renderCards = (index = 0, category = undefined) => {
@@ -64,19 +63,24 @@ const changeBtnActiveState = (selectedCategory) => {
 };
 
 const applyFilter = (e) => {
-    console.log(e.dataset)
     if (!e.target.classList.contains("category")) return;
     changeFilterState(e);
     if (!e.target.dataset.category) {
       renderFood.innerHTML = "";
-      renderFilteredFood();
+      title.innerHTML = 'Los más populares'
+      renderCards();
     } else {
-      renderFilteredFood(0, e.target.dataset.category);
-    }
+      renderCards(0, e.target.dataset.category);
+      if (e.target.classList.contains("category")) {
+        title.innerHTML = `${e.target.dataset.category}`
+      } else if (!e.target.dataset.category) {
+        title.innerHTML = '';
+      }
+    };
 };
 
 const init = () => {
-    renderFilteredFood();
+    renderCards();
     categories.addEventListener('click', applyFilter);
 }
 

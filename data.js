@@ -117,7 +117,7 @@ const carta = [
         description : '',
         prize : '$600',
         img : '',
-        category : 'Batidos',
+        category : 'batidos',
     } ,
     {
         id : 16,
@@ -125,7 +125,7 @@ const carta = [
         description : '',
         prize : '$600',
         img : '',
-        category : 'Batidos',
+        category : 'batidos',
     } ,
 
 ];

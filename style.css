@@ -247,6 +247,8 @@ nav {
     width: 12%;
     height: 157px;
     border-radius: 15px;
+    position: relative;
+    /* z-index: 300; */
 }
 
 .category img {
@@ -277,6 +279,7 @@ nav {
 .container-comida h2 {
     font-size: 18px;
     font-weight: 400;
+    text-transform: uppercase;
 }
 
 .container-cards-comida {
