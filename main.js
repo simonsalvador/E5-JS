@@ -1,6 +1,7 @@
 const categories = document.querySelector('.container-cards-category');
 const categoriesList = document.querySelectorAll('.category');
 const renderFood = document.querySelector('.container-cards-comida');
+const renderRecom = document.querySelector('.cards-recom');
 const title = document.getElementById('title');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -23,6 +24,20 @@ const renderCard = (food) => {
     </div>
     `
 }
+
+const renderRecom1 = () => {
+      renderRecom.innerHTML = ` 
+      <div class="card">
+      <img src="${carta[i].img}" alt="${carta[i].name}">
+      <div class="card-text">
+          <h3>${carta[i].name}</h3>
+          <p>${carta[i].description}</p>
+          <span class="color">${carta[i].prize}</span>
+      </div>
+      <button>Agregar</button>
+    </div>
+      `
+};
 
 const renderDividedProducts = (index = 0) => {
     renderFood.innerHTML += productsController.dividedProducts[index]
@@ -80,6 +95,7 @@ const applyFilter = (e) => {
 };
 
 const init = () => {
+    renderRecom1();
     renderCards();
     categories.addEventListener('click', applyFilter);
 }
