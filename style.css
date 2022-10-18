@@ -51,7 +51,7 @@ header {
 }
 
 nav {
-    display: flex;
+    display: flex;container 
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -228,6 +228,7 @@ nav {
 
 .container-categories h2 {
     font-size: 15px;
+    padding-bottom: 20px;
 }
 
 .container-cards-category {
@@ -238,6 +239,9 @@ nav {
     width: 97%;
 }
 
+.container-cards-category :hover {
+    transform: translateY(-10%);
+}
 .category {
     display: flex;
     flex-direction: column;
