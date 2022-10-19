@@ -35,25 +35,30 @@
 
 body {
     background: #131415;
+    position: relative;
     font-size: 16px;
     color: #fff;
     font-family: 'montserrat';
     overflow-x: hidden;
+
 }
 
 header {
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    top: 0%;
     width: 100%;
+    
     padding: 20px 20px 20px 50px;
     z-index: 100;
 }
 
 nav {
+    
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
@@ -89,10 +94,16 @@ nav {
     cursor: pointer;
 }
 
+.navbar__menu-container {
+    display: none;
+}
+
 .container-info {
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
     width: 70%;
 }
 
@@ -396,10 +407,89 @@ footer {
 
 /* Menu hamburguesa */
 
+.menu-btn {
+    display: block;
+    top: 50px;
+    right: 2%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50px;
+}
+.menu-btn:before,
+.menu-btn:after,
+.menu-btn div {
+    background: var(--gradient-yellow);
+    content: "";
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+}
+.menu-btn:hover:before {
+    transform: translateY(12px) rotate(135deg);
+}
+.menu-btn:hover:after {
+    transform: translateY(-12px) rotate(-135deg);
+}
+.menu-btn:hover div {
+    transform: scale(0);
+}
+
+.navbar__menu-container {
+    position:absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0%;
+    right: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #2C2C2C;
+    padding: 15px;
+    border-radius: 0 0 0 15px;
+    width: 28%;
+    z-index: 500;
+    transform: translate(200%);
+    transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.navbar__menu-container li {
+    list-style: none;
+    display: block;
+    margin:50px 0px;
+    transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.navbar__menu-container li a {
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    
+}
+
+.navbar__menu-container li a.active-menu-item, .navbar__menu-container li a :hover {
+    color: var(--gradient-yellow);
+    transition: .3s; 
+}
+
+
+
+
+
+
+
+
+
 
 /* Carrito */
 .cart {
-    position: absolute;
+    
+    position:absolute;
     top: 0;
     right: 0;
     display: flex;
@@ -664,4 +754,26 @@ footer {
 
 .menu-hamburguesa {
     display: none;
+}
+
+
+@media (max-width: 768px) {
+    .navbar__menu-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        position: fixed;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: calc(100% - 70px);
+        transition: left 0.3s;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav__menu-visible {
+        left: 0;
+    }
 }

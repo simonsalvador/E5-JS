@@ -22,7 +22,22 @@ const buyBtn = document.querySelector('.btn-buy');
 const deleteBtn = document.querySelector('.btn-delete');
 // Botón para abrir y cerrar menú hamburguesa
 const barsBtn = document.querySelector(".menu-hamburguesa");
-// Menu hamburguesa
+
+
+// Menu hamburguesa Inicio//
+const navToggle = document.querySelector(".nav-toggle")
+const navMenu = document.querySelector(".navbar__menu-container")
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("nav__menu-visible");
+
+    if (navMenu.classList.contains("nav__menu-visible")) {
+        navToggle.setAttribute("aria-label", "Cerrar menú");
+    } else {
+        navToggle.setAttribute("aria-label", "Abrir menú");}
+});
+//Menú Hamburguesa Fin//
+
 
 const overlay = document.querySelector('.overlay');
 

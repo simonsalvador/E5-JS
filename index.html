@@ -10,10 +10,9 @@
 <body>
     <main class="main-container">
     <header>
-        <img src="./assets/nav-icons/nucbazappiicon 1.png" alt="logo">
-        <img class="menu-hamburguesa" src="./assets/menu-hamburguesa-despliegue-img/hamburguesa.png" alt="menu-icon"> <!--aca va el boton de despliegue del menu hamburguesa--> 
-
         <nav>
+            <div class="navbar__logo-img"><img src="./assets/nav-icons/nucbazappiicon 1.png" alt="logo">
+            </div>
             <div class="navbar__cart-icon">
                 <div class="home-icon-container">
                     <img src="./assets/nav-icons/Home.png" alt="home-icon">
@@ -27,6 +26,21 @@
             </div>
 
             <!-- Menu Hamburguesa -->
+            <div class="menu-btn nav-toggle">
+                <div></div>
+            </div>
+
+            <div class="navbar__menu-container">                
+                <div class="menu-overlay"></div>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="active-menu-item"href="#" >Home</a></li>
+                    <li class="nav-menu-item"><a href="#">Mi cuenta</a></li>
+                    <li class="nav-menu-item"><a href="#">Populares</a></li>
+                    <li class="nav-menu-item"><a href="#">Categorias</a></li>
+                    <li class="nav-menu-item"><a href="#">About</a></li>
+
+                </ul>
+            </div>
 
 
             <!-- Carrito -->
@@ -69,7 +83,7 @@
                     <a class="cart-link" href="#categorias">Ver más productos</a>
                   </div>
             </div>          
-                <div class="overlay"></div> 
+                <div class="cart-overlay"></div> 
         </nav>
 
     </header>
