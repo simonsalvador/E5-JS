@@ -65,7 +65,7 @@ const carta = [
     } ,
     {
         id : 9,
-        name : 'Papás Fritas',
+        name : 'Papas Fritas',
         description : '',
         prize : '$700',
         img : './assets/comida-img/papas.jpg',
