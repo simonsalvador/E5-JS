@@ -47,20 +47,6 @@ const renderCard = (food) => {
     `
 }
 
-// const renderRecom1 = () => {
-//       renderRecom.innerHTML = ` 
-//       <div class="card">
-//       <img src="${carta[i].img}" alt="${carta[i].name}">
-//       <div class="card-text">
-//           <h3>${carta[i].name}</h3>
-//           <p>${carta[i].description}</p>
-//           <span class="color">${carta[i].prize}</span>
-//       </div>
-//       <button>Agregar</button>
-//     </div>
-//       `
-// };
-
 const renderDividedProducts = (index = 0) => {
     renderFood.innerHTML += productsController.dividedProducts[index]
       .map(renderCard) // .map((e) => renderProduct(e))
@@ -116,8 +102,29 @@ const applyFilter = (e) => {
     };
 };
 
+const renderCardRecom = (food) => {
+ const {img, name, description, prize} = food;
+  return ` 
+  <div class="card">
+  <img src="${img}" alt="${name}">
+  <div class="card-text">
+      <h3>${name}</h3>
+      <p>${description}</p>
+      <span class="color">${prize}</span>
+  </div>
+  <button>Agregar</button>
+</div>
+  `
+};
+
+const renderCardsRecom = () => {
+   renderRecom.innerHTML += carta.slice(0, 3).map(renderCardRecom)
+    .join("");
+    // console.log(renderRecom.innerHTML)
+};
+
 const init = () => {
-    // renderRecom1();
+    renderCardsRecom();
     renderCards();
     categories.addEventListener('click', applyFilter);
 }
