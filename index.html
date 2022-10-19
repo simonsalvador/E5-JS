@@ -25,19 +25,53 @@
                 </div>
                 <img class="user" src="./assets/nav-icons/Profile.png" alt="nav-icons">
             </div>
-            <!--
-           <div class="cart-total">
-              <p>Total:</p>
-              <span class="total">$</span>
-              <span class="total">$</span>
-            </div>
-            <button class="btn-buy">Comprar</button>
-            <button class="btn-delete">Vaciar carrito</button>
-            </div>
-            <div class="overlay"></div>
-            -->
-           
+
+            <!-- Menu Hamburguesa -->
+
+
+            <!-- Carrito -->
+            <div class="cart">
+                <span class="close" id="close">x</span>
+                <h2>Tus Productos</h2>
+                <div class="cart-container">
+                    <div class="cart-card">
+                        <img src="./assets/reco-img/Photo Menu.png" alt="">
+                        <div class="cart-info">
+                            <h3>Batido de chocolate</h3>
+                            <p>La más completa</p>
+                            <span class="color">$3650</span>
+                        </div>
+                        <div class="buttons">
+                            <span class="quantity-handler down" data-id=${id}><div class="menos"></div></span>
+                            <span class="item-quantity">1</span>
+                            <span class="quantity-handler up" data-id=${id}>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-subtotal">
+                    <div class="sub">
+                        <p>Subtotal:</p>
+                        <span class="total">$0.00</span>
+                    </div>
+                    <div class="envio">
+                        <p>Envio:</p>
+                        <span class="free">Gratis</span>
+                    </div>
+                </div>
+                <span class="divider"></span>
+                <div class="cart-total">
+                    <p>Total:</p>
+                    <span class="total">$0.00</span>
+                </div>
+                  <button class="btn-buy">Comprar</button>
+                  <button class="btn-delete">Vaciar carrito</button>
+                  <div class="show-more">
+                    <a href="#categorias">Ver más productos</a>
+                  </div>
+            </div>          
+                <div class="overlay"></div> 
         </nav>
+
     </header>
         <section class="container-info">
             <div class="info">
@@ -82,7 +116,7 @@
                 </div> -->
             </div>
         </section>
-        <section class="container-categories">
+        <section class="container-categories" id="categorias">
             <h2>Categorias</h2>
             <div class="container-cards-category">
                 <div class="category active">
@@ -125,79 +159,7 @@
             <div class="container-comida">
                 <h2 id="title">Lo más populares</h2>
                 <div class="container-cards-comida">
-                    <!-- <div class="cards-comida">
-                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div> -->
-                    <!-- <div class="cards-comida">
-                        <img src="https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/4e4293857c03d819e4ae51de1e86d66a.jpg" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div>
-                    <div class="cards-comida">
-                        <img src="https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/4e4293857c03d819e4ae51de1e86d66a.jpg" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div>
-                    <div class="cards-comida">
-                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div>
-                    <div class="cards-comida">
-                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div>
-                    <div class="cards-comida">
-                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div>
-                    <div class="cards-comida">
-                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div>
-                    <div class="cards-comida">
-                        <img src="./assets/pizza-img/Photo Menu.png" alt="">
-                        <h3>La Mr. Pit</h3>
-                        <p>Solo para expertos</p>
-                        <div class="precio">
-                            <span class="color">$350</span>
-                            <button>Agregar</button>
-                        </div>
-                    </div> -->
-                  
+    
                 </div>
             </div>
         </section>

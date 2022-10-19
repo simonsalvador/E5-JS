@@ -25,19 +25,19 @@ const renderCard = (food) => {
     `
 }
 
-const renderRecom1 = () => {
-      renderRecom.innerHTML = ` 
-      <div class="card">
-      <img src="${carta[i].img}" alt="${carta[i].name}">
-      <div class="card-text">
-          <h3>${carta[i].name}</h3>
-          <p>${carta[i].description}</p>
-          <span class="color">${carta[i].prize}</span>
-      </div>
-      <button>Agregar</button>
-    </div>
-      `
-};
+// const renderRecom1 = () => {
+//       renderRecom.innerHTML = ` 
+//       <div class="card">
+//       <img src="${carta[i].img}" alt="${carta[i].name}">
+//       <div class="card-text">
+//           <h3>${carta[i].name}</h3>
+//           <p>${carta[i].description}</p>
+//           <span class="color">${carta[i].prize}</span>
+//       </div>
+//       <button>Agregar</button>
+//     </div>
+//       `
+// };
 
 const renderDividedProducts = (index = 0) => {
     renderFood.innerHTML += productsController.dividedProducts[index]
@@ -95,7 +95,7 @@ const applyFilter = (e) => {
 };
 
 const init = () => {
-    renderRecom1();
+    // renderRecom1();
     renderCards();
     categories.addEventListener('click', applyFilter);
 }
