@@ -84,7 +84,7 @@ const carta = [
         name : 'Vegetariano',
         description : '',
         prize : '$600',
-        img : '',
+        img : './assets/comida-img/burrito_veggie.jpg',
         category : 'wraps',
     } ,
     {
@@ -92,7 +92,7 @@ const carta = [
         name : 'Chicken Wrap',
         description : '',
         prize : '$800',
-        img : '',
+        img : './assets/comida-img/chicken_wrap.jpg',
         category : 'wraps',
     } ,
     {
@@ -100,7 +100,7 @@ const carta = [
         name : 'Tacos',
         description : '',
         prize : '$1200',
-        img : '',
+        img : './assets/comida-img/tacos.jpg',
         category : 'mexican-food',
     } ,
     {
@@ -108,7 +108,7 @@ const carta = [
         name : 'Nachos',
         description : '',
         prize : '$900',
-        img : '',
+        img : './assets/comida-img/nachos.jpg',
         category : 'mexican-food',
     } ,
     {
@@ -116,7 +116,7 @@ const carta = [
         name : 'Batido de chocolate',
         description : '',
         prize : '$600',
-        img : '',
+        img : './assets/comida-img/batido_chocolate.jpg',
         category : 'batidos',
     } ,
     {
@@ -124,7 +124,7 @@ const carta = [
         name : 'Batido de frutilla',
         description : '',
         prize : '$600',
-        img : '',
+        img : './assets/comida-img/batido_frutilla.jpg',
         category : 'batidos',
     } ,
 
