@@ -1,8 +1,30 @@
+// Contenedor categorias
 const categories = document.querySelector('.container-cards-category');
+// Categoria
 const categoriesList = document.querySelectorAll('.category');
-const renderFood = document.querySelector('.container-cards-comida');
-const renderRecom = document.querySelector('.cards-recom');
+// Titulo de las cards
 const title = document.getElementById('title');
+// Contenedor donde se renderiza las cards
+const renderFood = document.querySelector('.container-cards-comida');
+// Contenedor de las cards (Hoy te recomendamos)
+const renderRecom = document.querySelector('.cards-recom');
+// Carrito
+const cartMenu = document.querySelector(".cart");
+// Botón para abrir y cerrar carrito
+const cartBtn = document.querySelector(".cart-menu");
+// Contenedor del carrito donde se renderizan las cards
+const productsCart = document.querySelector('.cart-container');
+// Se renderiza precio total (carrito)
+const total = document.querySelector('.total');
+// Botón comprar (carrito)
+const buyBtn = document.querySelector('.btn-buy');
+// Vaciar carrito
+const deleteBtn = document.querySelector('.btn-delete');
+// Botón para abrir y cerrar menú hamburguesa
+const barsBtn = document.querySelector(".menu-hamburguesa");
+// Menu hamburguesa
+
+const overlay = document.querySelector('.overlay');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 

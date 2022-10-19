@@ -658,6 +658,10 @@ footer {
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
+.open-menu {
+    display: flex;
+}
+
 .menu-hamburguesa {
     display: none;
 }
