@@ -28,7 +28,7 @@ const carta = [
         name : '4 Quesos',
         description : '',
         prize : '$1400',
-        img : '',
+        img : './assets/comida-img/4quesos.jpg',
         category : 'pizzas',
     } ,
     {
@@ -36,7 +36,7 @@ const carta = [
         name : 'Veggie',
         description : '',
         prize : '$1430',
-        img : '',
+        img : './assets/comida-img/veggie.jpg',
         category : 'pizzas',
     } ,
     {
@@ -44,7 +44,7 @@ const carta = [
         name : 'Doble Cheddar',
         description : '',
         prize : '$800',
-        img : '',
+        img : './assets/comida-img/doble_cheddar.jpg',
         category : 'hamburguesas',
     } ,
     {
@@ -52,7 +52,7 @@ const carta = [
         name : 'Triple Bacon',
         description : '',
         prize : '$1100',
-        img : '',
+        img : './assets/comida-img/triple_bacon.jpg',
         category : 'hamburguesas',
     } ,
     {
@@ -60,7 +60,7 @@ const carta = [
         name : 'Jamón Serrano',
         description : '',
         prize : '$900',
-        img : '',
+        img : './assets/comida-img/jamon_serrano.jpg',
         category : 'hamburguesas',
     } ,
     {
@@ -68,7 +68,7 @@ const carta = [
         name : 'Papás Fritas',
         description : '',
         prize : '$700',
-        img : '',
+        img : './assets/comida-img/papas.jpg',
         category : 'napapuki',
     } ,
     {
@@ -76,7 +76,7 @@ const carta = [
         name : 'Super Cheddar',
         description : '',
         prize : '$900',
-        img : '',
+        img : './assets/comida-img/papas_cheddar.png',
         category : 'napapuki',
     } ,
     {
