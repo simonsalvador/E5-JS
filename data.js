@@ -12,7 +12,7 @@ const carta = [
         name : 'Napolitana',
         description : '',
         prize : '$1200',
-        img : './assets/comida-img/',
+        img : './assets/comida-img/napolitana.jpg',
         category : 'pizzas',
     } ,
     {
@@ -20,7 +20,7 @@ const carta = [
         name : 'Fugazzeta',
         description : '',
         prize : '$1100',
-        img : '',
+        img : './assets/comida-img/fugazzeta.jpg',
         category : 'pizzas',
     } ,
     {
