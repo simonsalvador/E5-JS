@@ -179,6 +179,13 @@ nav {
     height: 100px;
 }
 
+.card img {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
 .card-text {
     display: flex;
     flex-direction: column;

@@ -4,7 +4,7 @@ const carta = [
         name : 'Muzzarella',
         description : 'Solo para expertos',
         prize : '$900',
-        img : '',
+        img : './assets/comida-img/muzza.jpg',
         category : 'pizzas',
     } ,
     {
@@ -12,7 +12,7 @@ const carta = [
         name : 'Napolitana',
         description : '',
         prize : '$1200',
-        img : '',
+        img : './assets/comida-img/',
         category : 'pizzas',
     } ,
     {
