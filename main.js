@@ -26,18 +26,6 @@ const barsMenu = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu")
 // Botón de cerrar carrito
 const closeBtn = document.getElementById('close');
-
-// navMenu.addEventListener("click", () => {
-//     navMenu.classList.toggle("nav__menu-visible");
-
-//     if (navMenu.classList.contains("nav__menu-visible")) {
-//         navMenu.setAttribute("aria-label", "Cerrar menú");
-//     } else {
-//         navMenu.setAttribute("aria-label", "Abrir menú");}
-// });
-//Menú Hamburguesa Fin//
-
-
 const overlay = document.querySelector('.overlay');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
