@@ -21,21 +21,20 @@ const buyBtn = document.querySelector('.btn-buy');
 // Vaciar carrito
 const deleteBtn = document.querySelector('.btn-delete');
 // Botón para abrir y cerrar menú hamburguesa
-const barsBtn = document.querySelector(".menu-hamburguesa");
+const barsMenu = document.querySelector(".nav-toggle");
+// Menu hamburguesa//
+const navMenu = document.querySelector(".nav-menu")
+// Botón de cerrar carrito
+const closeBtn = document.getElementById('close');
 
+// navMenu.addEventListener("click", () => {
+//     navMenu.classList.toggle("nav__menu-visible");
 
-// Menu hamburguesa Inicio//
-const navToggle = document.querySelector(".nav-toggle")
-const navMenu = document.querySelector(".navbar__menu-container")
-
-navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("nav__menu-visible");
-
-    if (navMenu.classList.contains("nav__menu-visible")) {
-        navToggle.setAttribute("aria-label", "Cerrar menú");
-    } else {
-        navToggle.setAttribute("aria-label", "Abrir menú");}
-});
+//     if (navMenu.classList.contains("nav__menu-visible")) {
+//         navMenu.setAttribute("aria-label", "Cerrar menú");
+//     } else {
+//         navMenu.setAttribute("aria-label", "Abrir menú");}
+// });
 //Menú Hamburguesa Fin//
 
 
@@ -138,10 +137,63 @@ const renderCardsRecom = () => {
     // console.log(renderRecom.innerHTML)
 };
 
+const toggleMenu = () => {
+  navMenu.classList.toggle("nav__menu-visible");
+  if (cartMenu.classList.contains("open-cart")) {
+    cartMenu.classList.remove("open-cart");
+    return;
+  }
+  overlay.classList.toggle("show-overlay");
+};
+
+const toggleCart = () => {
+  cartMenu.classList.toggle("open-cart");
+  if (navMenu.classList.contains("nav__menu-visible")) {
+    navMenu.classList.remove("nav__menu-visible");
+    return;
+  }
+  overlay.classList.toggle("show-overlay");
+};
+
+const closeOnClick = (e) => {
+  if (!e.target.classList.contains("nav-menu-item")) return;
+  navMenu.classList.remove("nav__menu-visible");
+  overlay.classList.remove("show-overlay");
+};
+
+const closeOnClickButton = (e) => {
+  if (!e.target.classList.contains('close')) return;
+  cartMenu.classList.remove('open-cart');
+  overlay.classList.remove('show-overlay');
+}
+
+const closeOnOverlayClick = () => {
+  navMenu.classList.remove("nav__menu-visible");
+  cartMenu.classList.remove("open-cart");
+  overlay.classList.remove("show-overlay");
+};
+
+const closeOnScroll = () => {
+  if (
+    !navMenu.classList.contains("nav__menu-visible") &&
+    !cartMenu.classList.contains("open-cart")
+  )
+    return;
+  navMenu.classList.remove("nav__menu-visible");
+  cartMenu.classList.remove("open-cart");
+  overlay.classList.remove("show-overlay");
+};
+
 const init = () => {
     renderCardsRecom();
     renderCards();
     categories.addEventListener('click', applyFilter);
+    barsMenu.addEventListener('click', toggleMenu);
+    cartBtn.addEventListener('click', toggleCart);
+    navMenu.addEventListener('click', closeOnClick);
+    overlay.addEventListener('click', closeOnOverlayClick);
+    window.addEventListener('scroll', closeOnScroll);
+    closeBtn.addEventListener('click', closeOnClickButton);
 }
 
 init();

@@ -33,26 +33,35 @@
     scroll-behavior: smooth;
 }
 
+html {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     background: #131415;
     position: relative;
     font-size: 16px;
     color: #fff;
     font-family: 'montserrat';
+    overflow-y: auto;
     overflow-x: hidden;
-
+    -webkit-overflow-scrolling: touch;
 }
 
 header {
     display: flex;
-    
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     top: 0%;
     width: 100%;
-    
+    height: 100px;
     padding: 20px 20px 20px 50px;
     z-index: 100;
+    background: #131415;
+    opacity: .9;
 }
 
 nav {
@@ -94,16 +103,11 @@ nav {
     cursor: pointer;
 }
 
-.navbar__menu-container {
-    display: none;
-}
-
 .container-info {
-    
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    margin-top: 100px;
     width: 70%;
 }
 
@@ -274,7 +278,6 @@ nav {
     height: 157px;
     border-radius: 15px;
     position: relative;
-    /* z-index: 300; */
 }
 
 .category img {
@@ -291,7 +294,6 @@ nav {
     height: 4px;
     background: linear-gradient(to right,var(--gradient-yellow), var(--gradient-red));
     border-radius: 15px;
-    /* box-shadow: 0px 0px 90px rgba(1, 2, 7, 0.5); */
 }
 
 .container-comida {
@@ -416,64 +418,30 @@ footer {
     background: var(--gray);
 }
 
-/* Menu hamburguesa */
-
-.menu-btn {
-    display: block;
-    top: 50px;
-    right: 2%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 50px;
-}
-.menu-btn:before,
-.menu-btn:after,
-.menu-btn div {
-    background: var(--gradient-yellow);
-    content: "";
-    display: block;
-    height: 6px;
-    border-radius: 3px;
-    margin: 7px 0;
-    transition: 0.5s;
-}
-.menu-btn:hover:before {
-    transform: translateY(12px) rotate(135deg);
-}
-.menu-btn:hover:after {
-    transform: translateY(-12px) rotate(-135deg);
-}
-.menu-btn:hover div {
-    transform: scale(0);
-}
-
-.navbar__menu-container {
-    position:absolute;
-    width: 100%;
+/* Menu Hamburguesa */
+.nav-menu {
+    width: 100vw;
     height: 100vh;
-    top: 0%;
-    right: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    z-index: 500;
     background: #2C2C2C;
     padding: 15px;
-    border-radius: 0 0 0 15px;
-    width: 28%;
-    z-index: 500;
-    transform: translate(200%);
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-200%);
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
-.navbar__menu-container li {
+.nav-menu li {
     list-style: none;
-    display: block;
-    margin:50px 0px;
+    align-content: flex-start;
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
-.navbar__menu-container li a {
+.nav-menu li a {
     color: #FFFFFF;
     font-size: 20px;
     line-height: 50px;
@@ -483,23 +451,17 @@ footer {
     
 }
 
-.navbar__menu-container li a.active-menu-item, .navbar__menu-container li a :hover {
+.nav-menu li a.active-menu-item, .nav-menu li a :hover {
     color: var(--gradient-yellow);
     transition: .3s; 
 }
 
-
-
-
-
-
-
-
-
+.menu-btn {
+    display: none;
+}
 
 /* Carrito */
 .cart {
-    
     position:absolute;
     top: 0;
     right: 0;
@@ -511,7 +473,7 @@ footer {
     padding: 15px;
     border-radius: 0 0 0 15px;
     width: 28%;
-    z-index: 500;
+    z-index: 501;
     transform: translate(200%);
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
@@ -742,7 +704,7 @@ footer {
     left: 0;
     min-height: 100vh;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 8px 32px 0 rgba(193, 194, 201, 0.37);
     backdrop-filter: blur(5px);
@@ -759,32 +721,57 @@ footer {
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
-.open-menu {
-    display: flex;
-}
-
-.menu-hamburguesa {
-    display: none;
-}
-
-
 @media (max-width: 768px) {
-    .navbar__menu-container {
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        position: fixed;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: calc(100% - 70px);
-        transition: left 0.3s;
+    .home-icon-container {
+        display: none;
     }
 
+    .user {
+        display: none;
+    }
+
+    .cart-menu {
+        width: 40px;
+        margin-right: 70px;
+    }
+
+    /* Menu hamburguesa */
     .menu-btn {
         display: block;
+        top: 50px;
+        right: 2%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 40px;
+        z-index: 600;
     }
+    .menu-btn:before,
+.menu-btn:after,
+.menu-btn div {
+    background: var(--gradient-yellow);
+    content: "";
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+}
 
-    .nav__menu-visible {
-        left: 0;
-    }
+.menu-btn:hover:before {
+    transform: translateY(12px) rotate(135deg);
+}
+
+.menu-btn:hover:after {
+    transform: translateY(-12px) rotate(-135deg);
+}
+
+.menu-btn:hover div {
+    transform: scale(0);
+}
+
+.nav__menu-visible {
+    display: flex;
+    transform: translate(0%);
+    transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="main-container">
-    <header>
+    <header id="header">
         <nav>
             <div class="navbar__logo-img"><img src="./assets/nav-icons/nucbazappiicon 1.png" alt="logo">
             </div>
@@ -29,18 +29,15 @@
             <div class="menu-btn nav-toggle">
                 <div></div>
             </div>
-
-            <div class="navbar__menu-container">                
-                <div class="menu-overlay"></div>
+               
                 <ul class="nav-menu">
-                    <li class="nav-menu-item"><a class="active-menu-item"href="#" >Home</a></li>
-                    <li class="nav-menu-item"><a href="#">Mi cuenta</a></li>
-                    <li class="nav-menu-item"><a href="#">Populares</a></li>
-                    <li class="nav-menu-item"><a href="#">Categorias</a></li>
-                    <li class="nav-menu-item"><a href="#">About</a></li>
+                    <li ><a class="active-menu-item nav-menu-item" href="#" >Home</a></li>
+                    <li><a class="nav-menu-item" href="#header">Mi cuenta</a></li>
+                    <li><a class="nav-menu-item" href="#populares">Populares</a></li>
+                    <li><a class="nav-menu-item" href="#categorias">Categorias</a></li>
+                    <li><a class="nav-menu-item" href="#about">About</a></li>
 
                 </ul>
-            </div>
 
 
             <!-- Carrito -->
@@ -83,11 +80,10 @@
                     <a class="cart-link" href="#categorias">Ver más productos</a>
                   </div>
             </div>          
-                <div class="cart-overlay"></div> 
         </nav>
-
+        <div class="overlay"></div> 
     </header>
-        <section class="container-info">
+            <section class="container-info"> 
             <div class="info">
                 <h1>Si tenes Zappi, <span class="nucba">tenes Nucba.</span></h1>
                 <p>Buscá lo que quieras y nucba te quedes sin comida.</p>
@@ -98,7 +94,7 @@
                 <img class="pizza-absolute" src="./assets/hero-img/pizza 1.png" alt="pizza-imagen">
             </div>
         </section>
-        <section class="container-recomendaciones">
+        <section class="container-recomendaciones" id="populares">
             <h2>Hoy te recomendamos</h2>
             <div class="cards-recom">
                 <!-- <div class="card">
@@ -107,24 +103,6 @@
                         <h3>Bennazianna</h3>
                         <p>La más completa</p>
                         <span class="color">$3650</span>
-                    </div>
-                    <button>Agregar</button>
-                </div>
-                <div class="card">
-                    <img src="./assets/reco-img/Photo Menu-1.png" alt="">
-                    <div class="card-text">
-                        <h3>Tronco-Pizza</h3>
-                        <p>Para todo el día</p>
-                        <span class="color">$870</span>
-                    </div>
-                    <button>Agregar</button>
-                </div>
-                <div class="card">
-                    <img src="./assets/reco-img/Photo Menu-2.png" alt="">
-                    <div class="card-text">
-                        <h3>Papas | Provenzal</h3>
-                        <p>Van como piña</p>
-                        <span class="color">$360</span>
                     </div>
                     <button>Agregar</button>
                 </div> -->
@@ -177,7 +155,7 @@
                 </div>
             </div>
         </section>
-        <footer>
+        <footer id="about">
             <div class="footer-text">
                 <a href="#">Términos de Uso</a>
                 <a href="#">Trabajá con Nosotros</a>
