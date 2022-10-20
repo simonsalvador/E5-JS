@@ -59,7 +59,7 @@ header {
     width: 100%;
     height: 100px;
     padding: 20px 20px 20px 50px;
-    z-index: 100;
+    z-index: 50;
     background: #131415;
     opacity: .9;
 }
@@ -429,7 +429,7 @@ footer {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: 500;
+    z-index: 100;
     background: #2C2C2C;
     padding: 15px;
     top: 0;
@@ -479,7 +479,7 @@ footer {
     padding: 15px;
     border-radius: 0 0 0 15px;
     width: 28%;
-    z-index: 501;
+    z-index: 120;
     transform: translate(200%);
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
@@ -710,7 +710,7 @@ footer {
     left: 0;
     min-height: 100vh;
     width: 100%;
-    z-index: 10;
+    z-index: 60;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 8px 32px 0 rgba(193, 194, 201, 0.37);
     backdrop-filter: blur(5px);
@@ -738,7 +738,12 @@ footer {
 
     .cart-menu {
         width: 40px;
-        margin-right: 70px;
+        margin-right: 90px;
+    }
+
+    .cart {
+        width: 90%;
+        opacity: 1;
     }
 
     /* Menu hamburguesa */
@@ -748,8 +753,8 @@ footer {
         right: 2%;
         transform: translate(-50%, -50%);
         position: absolute;
-        width: 40px;
-        z-index: 600;
+        width: 35px;
+        z-index: 300;
     }
     .menu-btn:before,
     .menu-btn:after,
@@ -779,5 +784,9 @@ footer {
         display: flex;
         transform: translate(0%);
         transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    }
+
+    .hidden {
+        display: none;
     }
 }

@@ -152,6 +152,7 @@ const toggleCart = () => {
     navMenu.classList.remove("nav__menu-visible");
     return;
   }
+  barsMenu.classList.add("hidden");
   overlay.classList.toggle("show-overlay");
 };
 
@@ -159,18 +160,22 @@ const closeOnClick = (e) => {
   if (!e.target.classList.contains("nav-menu-item")) return;
   navMenu.classList.remove("nav__menu-visible");
   overlay.classList.remove("show-overlay");
+  barsMenu.classList.remove("hidden");
 };
 
 const closeOnClickButton = (e) => {
   if (!e.target.classList.contains('close')) return;
   cartMenu.classList.remove('open-cart');
   overlay.classList.remove('show-overlay');
+  barsMenu.classList.remove("hidden");
 }
 
 const closeOnOverlayClick = () => {
   navMenu.classList.remove("nav__menu-visible");
   cartMenu.classList.remove("open-cart");
   overlay.classList.remove("show-overlay");
+  barsMenu.classList.remove("hidden");
+
 };
 
 const closeOnScroll = () => {
@@ -182,6 +187,7 @@ const closeOnScroll = () => {
   navMenu.classList.remove("nav__menu-visible");
   cartMenu.classList.remove("open-cart");
   overlay.classList.remove("show-overlay");
+  barsMenu.classList.remove("hidden");
 };
 
 const init = () => {
