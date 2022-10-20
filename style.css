@@ -33,6 +33,10 @@
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #131415;
     position: relative;
