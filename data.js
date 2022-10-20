@@ -10,7 +10,7 @@ const carta = [
     {
         id : 2,
         name : 'Napolitana',
-        description : '',
+        description : 'Solo para expertos',
         prize : '$1200',
         img : './assets/comida-img/napolitana.jpg',
         category : 'pizzas',
