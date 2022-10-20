@@ -51,10 +51,8 @@ const renderCard = (food) => {
     `
 }
 
-const renderDividedProducts = (index = 0) => {
-    renderFood.innerHTML += productsController.dividedProducts[index]
-      .map(renderCard) // .map((e) => renderProduct(e))
-      .join("");
+const renderCards = () => {
+    renderFood.innerHTML += carta.map(renderCard).join("");
 };
 
 const renderFilteredFood = (category) => {
@@ -64,14 +62,13 @@ const renderFilteredFood = (category) => {
     renderFood.innerHTML = foodList.map(renderCard).join("");
 };
 
-const renderCards = (index = 0, category = undefined) => {
-    if (!category) {
-      // !undefined === true
-      renderDividedProducts(index);
-      return;
-    }
-    renderFilteredFood(category);
-};
+const renderProducts = (category = undefined) => {
+  if (!category) {
+    renderCards();
+    return;
+  }
+  renderFilteredFood(category);
+}
 
 const changeFilterState = (e) => {
     const selectedCategory = e.target.dataset.category;
@@ -95,9 +92,10 @@ const applyFilter = (e) => {
     if (!e.target.dataset.category) {
       renderFood.innerHTML = "";
       title.innerHTML = 'Los más populares'
-      renderCards();
+      renderProducts();
     } else {
-      renderCards(0, e.target.dataset.category);
+      renderProducts(e.target.dataset.category);
+      console.log(renderProducts(e.target.dataset.category));
       if (e.target.classList.contains("category")) {
         title.innerHTML = `${e.target.dataset.category}`
       } else if (!e.target.dataset.category) {

@@ -129,16 +129,3 @@ const carta = [
     } ,
 
 ];
-
-const splitProducts = (size) => {
-    let dividedProducts = [];
-    for (let i = 0; i < carta.length; i += size)
-      dividedProducts.push(carta.slice(i, i + size));
-    return dividedProducts;
-};
-  
-const productsController = {
-    dividedProducts: splitProducts(16), //  [[6],[6],[3]]
-    nextProductsIndex: 1,
-    productsLimit: splitProducts(16).length,
-};
