@@ -727,6 +727,26 @@ footer {
     transition: all .5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
+.add-modal {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #4BB543;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    transform: translateY(200%);
+}
+  
+.active-modal {
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
+}
+
 @media (max-width: 768px) {
     .home-icon-container {
         display: none;

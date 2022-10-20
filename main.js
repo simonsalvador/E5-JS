@@ -26,6 +26,8 @@ const barsMenu = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu")
 // Botón de cerrar carrito
 const closeBtn = document.getElementById('close');
+// Card del modal (confirma el añadido al carrito)
+const showSuccesModal = document.querySelector('.add-modal')
 const overlay = document.querySelector('.overlay');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
