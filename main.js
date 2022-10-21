@@ -45,12 +45,12 @@ const renderCard = (food) => {
     <p>${description}</p>
     <div class="precio">
         <span class="color">${prize}</span>
-        <button class="add-btn">
+        <button class="add-btn"
         data-id="${id}"
         data-name="${name}"
         data-description="${description}"
         data-prize="${prize}"
-        data-img="${img}" Agregar</button>
+        data-img="${img}">Agregar</button>
     </div>
     </div>
     `
@@ -119,12 +119,12 @@ const renderCardRecom = (food) => {
       <p>${description}</p>
       <span class="color">${prize}</span>
   </div>
-    <button class="add-btn">
-        data-id="${id}"
-        data-name="${name}"
-        data-description="${description}"
-        data-prize="${prize}"
-        data-img="${img}" Agregar</button>
+      <button class="add-btn"
+      data-id="${id}"
+      data-name="${name}"
+      data-description="${description}"
+      data-prize="${prize}"
+      data-img="${img}">Agregar</button>
 </div>
   `
 };
