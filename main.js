@@ -37,7 +37,7 @@ const saveLocalStorage = (cartList) => {
 }
 
 const renderCard = (food) => {
-    const {name, description, prize, img} = food;
+    const {id, name, description, prize, img} = food;
     return `
     <div class="cards-comida">
     <img src="${img}" alt="${name}">
@@ -45,7 +45,12 @@ const renderCard = (food) => {
     <p>${description}</p>
     <div class="precio">
         <span class="color">${prize}</span>
-        <button>Agregar</button>
+        <button class="add-btn">
+        data-id="${id}"
+        data-name="${name}"
+        data-description="${description}"
+        data-prize="${prize}"
+        data-img="${img}" Agregar</button>
     </div>
     </div>
     `
@@ -105,7 +110,7 @@ const applyFilter = (e) => {
 };
 
 const renderCardRecom = (food) => {
- const {img, name, description, prize} = food;
+ const {id, img, name, description, prize} = food;
   return ` 
   <div class="card">
   <img src="${img}" alt="${name}">
@@ -114,7 +119,12 @@ const renderCardRecom = (food) => {
       <p>${description}</p>
       <span class="color">${prize}</span>
   </div>
-  <button>Agregar</button>
+    <button class="add-btn">
+        data-id="${id}"
+        data-name="${name}"
+        data-description="${description}"
+        data-prize="${prize}"
+        data-img="${img}" Agregar</button>
 </div>
   `
 };
