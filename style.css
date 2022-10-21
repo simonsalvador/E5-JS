@@ -742,6 +742,12 @@ footer {
     transition: all 0.5s ease-in;
 }
 
+.disabled {
+    background: linear-gradient(to right, #f1c574, #f899ab);
+    color: #fff;
+    cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
     body {
         overflow-y: auto;
