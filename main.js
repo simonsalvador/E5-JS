@@ -37,7 +37,7 @@ const saveLocalStorage = (cartList) => {
 }
 
 const renderCard = (food) => {
-    const {name, description, prize, img} = food;
+    const {id, name, description, prize, img} = food;
     return `
     <div class="cards-comida">
     <img src="${img}" alt="${name}">
@@ -45,7 +45,12 @@ const renderCard = (food) => {
     <p>${description}</p>
     <div class="precio">
         <span class="color">${prize}</span>
-        <button>Agregar</button>
+        <button class="btn-add"
+        data-id='${id}'
+        data-name='${name}'
+        data-prize='${prize}'
+        data-img='${img}'
+        data-description='${description}'>Agregar</button>
     </div>
     </div>
     `
@@ -178,6 +183,90 @@ const closeOnScroll = () => {
   barsMenu.classList.remove("hidden");
 };
 
+//logica del carrito y rendercart
+
+const renderCartProduct = (cartProduct) => {
+  const {id, img, name, description, prize, quantity } =cartProduct;
+  return ` 
+  <div class="cart-card">
+      <img src=${img}  alt="">
+      <div class="cart-info">
+          <h3>${name}</h3>
+          <p>${description}</p>
+          <span class="color">${prize}</span>
+      </div>
+      <div class="buttons">
+          <span class="quantity-handler down" data-id=${id}><div class="menos"></div></span>
+          <span class="item-quantity">${quantity}</span>
+          <span class="quantity-handler up" data-id=${id}>+</span>
+      </div>
+  </div>`
+};
+
+const renderCart = () => {
+  if (!cart.lenght) {
+    productsCart.innerHTML = `<p class="empty-msg"> No hay productos en el carrito. </p>`;
+    return;
+  }
+  productsCart.innerHTML = cart.map(renderCartProduct).join("");
+};
+
+//añadir productos
+const createProductData = (id, img, name, description, prize) => {
+  return { id, img, name, description, prize};
+};
+
+const isExistingCartProduct = (product) => {
+  return cart.find((item) => item.id === product.id);
+};
+
+
+const addUnitToProduct = (product) => {
+  cart = cart.map((cartProduct)=> {
+    return cartProduct.id === product.id 
+    ? {...cartProduct, quantity: cartProduct.quantity + 1}
+    : cartProduct;
+  });
+};
+
+const createCartProduct = (product) => {
+  cart = [...cart, { ...product, quantity: 1 }];
+};
+
+
+
+const checkCartState = () => {
+  saveLocalStorage(cart);
+  renderCart(cart);
+};
+
+/*const showSuccessModal = (msg) => {
+  successModal.classList.add("active-modal");
+  successModal.textContent = msg;
+  setTimeout(() => {
+    successModal.classList.remove("active-modal");
+  }, 1500);
+};*/
+
+const addProduct = (e) => {
+  if (!e.target.classList.contains("btn-add")) return;
+  const { id, img, name, description, prize} = e.target.dataset;
+
+  const product = createProductData(id, img, name, description, prize);
+
+  //El producto exista en el carrito
+if (isExistingCartProduct(product)) {
+  addUnitToProduct(product);
+  //showSuccessModal("Se agregó una unidad del producto al carrito");
+} else {
+  //Que no exista el product
+  createCartProduct(product);
+  //showSuccessModal("El producto se ha agregado al carrito");
+}
+checkCartState();
+};
+
+
 const init = () => {
     renderCardsRecom();
     renderCards();
@@ -188,6 +277,9 @@ const init = () => {
     overlay.addEventListener('click', closeOnOverlayClick);
     window.addEventListener('scroll', closeOnScroll);
     closeBtn.addEventListener('click', closeOnClickButton);
-}
+    
+    document.addEventListener("DOMContentLoaded", renderCart);
+    renderFood.addEventListener("click", addProduct);
+};
 
 init();
