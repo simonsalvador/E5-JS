@@ -45,12 +45,21 @@ const renderCard = (food) => {
     <p>${description}</p>
     <div class="precio">
         <span class="color">${prize}</span>
+<<<<<<< HEAD
         <button class="btn-add"
         data-id='${id}'
         data-name='${name}'
         data-prize='${prize}'
         data-img='${img}'
         data-description='${description}'>Agregar</button>
+=======
+        <button class="add-btn"
+        data-id="${id}"
+        data-name="${name}"
+        data-description="${description}"
+        data-prize="${prize}"
+        data-img="${img}">Agregar</button>
+>>>>>>> 281c4b2fb1d266bcccc06530dec5a6fd60362310
     </div>
     </div>
     `
@@ -110,7 +119,7 @@ const applyFilter = (e) => {
 };
 
 const renderCardRecom = (food) => {
- const {img, name, description, prize} = food;
+ const {id, img, name, description, prize} = food;
   return ` 
   <div class="card">
   <img src="${img}" alt="${name}">
@@ -119,7 +128,12 @@ const renderCardRecom = (food) => {
       <p>${description}</p>
       <span class="color">${prize}</span>
   </div>
-  <button>Agregar</button>
+      <button class="add-btn"
+      data-id="${id}"
+      data-name="${name}"
+      data-description="${description}"
+      data-prize="${prize}"
+      data-img="${img}">Agregar</button>
 </div>
   `
 };

@@ -2,7 +2,7 @@ const carta = [
     {
         id : 1,
         name : 'Muzzarella',
-        description : 'Solo para expertos',
+        description : 'Sólo para expertos',
         prize : '$900',
         img : './assets/comida-img/muzza.jpg',
         category : 'pizzas',
@@ -10,7 +10,7 @@ const carta = [
     {
         id : 2,
         name : 'Napolitana',
-        description : 'Solo para expertos',
+        description : 'La favorita de D10S',
         prize : '$1200',
         img : './assets/comida-img/napolitana.jpg',
         category : 'pizzas',
@@ -18,7 +18,7 @@ const carta = [
     {
         id : 3,
         name : 'Fugazzeta',
-        description : '',
+        description : '¡Con extra cebolla!',
         prize : '$1100',
         img : './assets/comida-img/fugazzeta.jpg',
         category : 'pizzas',
@@ -26,7 +26,7 @@ const carta = [
     {
         id : 4,
         name : '4 Quesos',
-        description : '',
+        description : 'La favorita de John Lennon',
         prize : '$1400',
         img : './assets/comida-img/4quesos.jpg',
         category : 'pizzas',
@@ -34,7 +34,7 @@ const carta = [
     {
         id : 5,
         name : 'Veggie',
-        description : '',
+        description : '¡Hasta parece deliciosa eh!',
         prize : '$1430',
         img : './assets/comida-img/veggie.jpg',
         category : 'pizzas',
@@ -42,7 +42,7 @@ const carta = [
     {
         id : 6,
         name : 'Doble Cheddar',
-        description : '',
+        description : 'Para más placer',
         prize : '$800',
         img : './assets/comida-img/doble_cheddar.jpg',
         category : 'hamburguesas',
@@ -50,7 +50,7 @@ const carta = [
     {
         id : 7,
         name : 'Triple Bacon',
-        description : '',
+        description : 'Sólo para estómagos valientes',
         prize : '$1100',
         img : './assets/comida-img/triple_bacon.jpg',
         category : 'hamburguesas',
@@ -58,7 +58,7 @@ const carta = [
     {
         id : 8,
         name : 'Jamón Serrano',
-        description : '',
+        description : 'El verdadero jamón Serrano',
         prize : '$900',
         img : './assets/comida-img/jamon_serrano.jpg',
         category : 'hamburguesas',
@@ -66,7 +66,7 @@ const carta = [
     {
         id : 9,
         name : 'Papas Fritas',
-        description : '',
+        description : 'Mirá lo que son esas papas',
         prize : '$700',
         img : './assets/comida-img/papas.jpg',
         category : 'napapuki',
@@ -74,7 +74,7 @@ const carta = [
     {
         id : 10,
         name : 'Super Cheddar',
-        description : '',
+        description : 'Para devorarlas',
         prize : '$900',
         img : './assets/comida-img/papas_cheddar.png',
         category : 'napapuki',
@@ -82,7 +82,7 @@ const carta = [
     {
         id : 11,
         name : 'Vegetariano',
-        description : '',
+        description : 'La mejor opción',
         prize : '$600',
         img : './assets/comida-img/burrito_veggie.jpg',
         category : 'wraps',
@@ -90,7 +90,7 @@ const carta = [
     {
         id : 12,
         name : 'Chicken Wrap',
-        description : '',
+        description : '¡Nunca falla!',
         prize : '$800',
         img : './assets/comida-img/chicken_wrap.jpg',
         category : 'wraps',
@@ -98,7 +98,7 @@ const carta = [
     {
         id : 13,
         name : 'Tacos',
-        description : '',
+        description : 'Como si estuvieras en México',
         prize : '$1200',
         img : './assets/comida-img/tacos.jpg',
         category : 'mexican-food',
@@ -106,7 +106,7 @@ const carta = [
     {
         id : 14,
         name : 'Nachos',
-        description : '',
+        description : 'Nacho nacho meeen...',
         prize : '$900',
         img : './assets/comida-img/nachos.jpg',
         category : 'mexican-food',
@@ -114,7 +114,7 @@ const carta = [
     {
         id : 15,
         name : 'Batido de chocolate',
-        description : '',
+        description : 'Pecado hecho bebida',
         prize : '$600',
         img : './assets/comida-img/batido_chocolate.jpg',
         category : 'batidos',
@@ -122,7 +122,7 @@ const carta = [
     {
         id : 16,
         name : 'Batido de frutilla',
-        description : '',
+        description : 'La vieja confiable',
         prize : '$600',
         img : './assets/comida-img/batido_frutilla.jpg',
         category : 'batidos',
