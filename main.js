@@ -16,6 +16,8 @@ const cartBtn = document.querySelector(".cart-menu");
 const productsCart = document.querySelector('.cart-container');
 // Se renderiza precio total (carrito)
 const total = document.querySelector('.total');
+// Se renderiza precio sub total (carrito)
+const subTotal = document.querySelector('.sub-total');
 // Botón comprar (carrito)
 const buyBtn = document.querySelector('.btn-buy');
 // Vaciar carrito
@@ -45,21 +47,12 @@ const renderCard = (food) => {
     <p>${description}</p>
     <div class="precio">
         <span class="color">${prize}</span>
-<<<<<<< HEAD
         <button class="btn-add"
-        data-id='${id}'
-        data-name='${name}'
-        data-prize='${prize}'
-        data-img='${img}'
-        data-description='${description}'>Agregar</button>
-=======
-        <button class="add-btn"
         data-id="${id}"
         data-name="${name}"
         data-description="${description}"
         data-prize="${prize}"
         data-img="${img}">Agregar</button>
->>>>>>> 281c4b2fb1d266bcccc06530dec5a6fd60362310
     </div>
     </div>
     `
@@ -109,7 +102,6 @@ const applyFilter = (e) => {
       renderProducts();
     } else {
       renderProducts(e.target.dataset.category);
-      console.log(renderProducts(e.target.dataset.category));
       if (e.target.classList.contains("category")) {
         title.innerHTML = `${e.target.dataset.category}`
       } else if (!e.target.dataset.category) {
@@ -128,7 +120,7 @@ const renderCardRecom = (food) => {
       <p>${description}</p>
       <span class="color">${prize}</span>
   </div>
-      <button class="add-btn"
+      <button class="btn-add"
       data-id="${id}"
       data-name="${name}"
       data-description="${description}"
@@ -200,21 +192,21 @@ const closeOnScroll = () => {
 //logica del carrito y rendercart
 
 const renderCartProduct = (cartProduct) => {
-  const {id, img, name, description, prize, quantity } =cartProduct;
+  const { id, name, description, prize, img, quantity } = cartProduct;
   return ` 
   <div class="cart-card">
-      <img src=${img}  alt="">
-      <div class="cart-info">
-          <h3>${name}</h3>
-          <p>${description}</p>
-          <span class="color">${prize}</span>
-      </div>
-      <div class="buttons">
-          <span class="quantity-handler down" data-id=${id}><div class="menos"></div></span>
-          <span class="item-quantity">${quantity}</span>
-          <span class="quantity-handler up" data-id=${id}>+</span>
-      </div>
-  </div>`
+            <img src="${img}" alt="${name}">
+            <div class="cart-info">
+                <h3>${name}</h3>
+                <p>${description}</p>
+                <span class="color">${prize}</span>
+            </div>
+            <div class="buttons">
+                <span class="quantity-handler down" data-id=${id}><div class="menos"></div></span>
+                <span class="item-quantity">${quantity}</span>
+                <span class="quantity-handler up" data-id=${id}>+</span>
+            </div>
+        </div>`
 };
 
 const renderCart = () => {
@@ -225,16 +217,27 @@ const renderCart = () => {
   productsCart.innerHTML = cart.map(renderCartProduct).join("");
 };
 
+const getCartTotal = () => {
+  return cart.reduce(
+    (acc, cur) => acc + Number(cur.prize) * Number(cur.quantity),
+    0
+  );
+};
+
+const showTotal = () => {
+  total.innerHTML = `$${getCartTotal().toFixed(2)}`;
+  subTotal.innerHTML = `$${getCartTotal().toFixed(2)}`;
+};
+
+const disableBtn = (btn) => {
+  if (!cart.length) {
+    btn.classList.add("disabled");
+    return;
+  }
+  btn.classList.remove("disabled");
+};
+
 //añadir productos
-const createProductData = (id, img, name, description, prize) => {
-  return { id, img, name, description, prize};
-};
-
-const isExistingCartProduct = (product) => {
-  return cart.find((item) => item.id === product.id);
-};
-
-
 const addUnitToProduct = (product) => {
   cart = cart.map((cartProduct)=> {
     return cartProduct.id === product.id 
@@ -247,39 +250,47 @@ const createCartProduct = (product) => {
   cart = [...cart, { ...product, quantity: 1 }];
 };
 
+const isExistingCartProduct = (product) => {
+  return cart.find((item) => item.id === product.id);
+};
 
+const createProductData = (id, name, description, prize, img) => {
+  return { id, name, description, prize, img };
+};
 
 const checkCartState = () => {
   saveLocalStorage(cart);
   renderCart(cart);
+  showTotal(cart);
+  disableBtn(buyBtn);
+  disableBtn(deleteBtn);
 };
 
-/*const showSuccessModal = (msg) => {
-  successModal.classList.add("active-modal");
-  successModal.textContent = msg;
+const showSuccessModal = (msg) => {
+  showSuccesModal.classList.add("active-modal");
+  showSuccesModal.textContent = msg;
   setTimeout(() => {
-    successModal.classList.remove("active-modal");
+    showSuccesModal.classList.remove("active-modal");
   }, 1500);
-};*/
+};
 
 const addProduct = (e) => {
   if (!e.target.classList.contains("btn-add")) return;
-  const { id, img, name, description, prize} = e.target.dataset;
+  const { id, name, description, prize, img } = e.target.dataset;
 
-  const product = createProductData(id, img, name, description, prize);
+  const product = createProductData(id, name, description, prize, img);
 
   //El producto exista en el carrito
 if (isExistingCartProduct(product)) {
   addUnitToProduct(product);
-  //showSuccessModal("Se agregó una unidad del producto al carrito");
+  showSuccessModal("Se agregó una unidad del producto al carrito");
 } else {
   //Que no exista el product
   createCartProduct(product);
-  //showSuccessModal("El producto se ha agregado al carrito");
+  showSuccessModal("El producto se ha agregado al carrito");
 }
 checkCartState();
 };
-
 
 const init = () => {
     renderCardsRecom();
@@ -291,9 +302,15 @@ const init = () => {
     overlay.addEventListener('click', closeOnOverlayClick);
     window.addEventListener('scroll', closeOnScroll);
     closeBtn.addEventListener('click', closeOnClickButton);
-    
     document.addEventListener("DOMContentLoaded", renderCart);
+    document.addEventListener("DOMContentLoaded", showTotal);
     renderFood.addEventListener("click", addProduct);
+    renderRecom.addEventListener("click", addProduct);
+    // productsCart.addEventListener("click", handleQuantity);
+    // buyBtn.addEventListener("click", completeBuy);
+    // deleteBtn.addEventListener("click", deleteCart);
+    disableBtn(buyBtn);
+    disableBtn(deleteBtn);
 };
 
 init();
