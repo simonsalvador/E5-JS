@@ -133,7 +133,6 @@ const renderCardRecom = (food) => {
 const renderCardsRecom = () => {
    renderRecom.innerHTML += carta.slice(0, 3).map(renderCardRecom)
     .join("");
-    // console.log(renderRecom.innerHTML)
 };
 
 const toggleMenu = () => {
@@ -210,7 +209,7 @@ const renderCartProduct = (cartProduct) => {
 };
 
 const renderCart = () => {
-  if (!cart.lenght) {
+  if (!cart.length) {
     productsCart.innerHTML = `<p class="empty-msg"> No hay productos en el carrito. </p>`;
     return;
   }
@@ -279,7 +278,6 @@ const addProduct = (e) => {
   const { id, name, description, prize, img } = e.target.dataset;
 
   const product = createProductData(id, name, description, prize, img);
-
   //El producto exista en el carrito
 if (isExistingCartProduct(product)) {
   addUnitToProduct(product);
@@ -292,6 +290,73 @@ if (isExistingCartProduct(product)) {
 checkCartState();
 };
 
+const substractProductUnit = (existingProduct) => {
+  cart = cart.map((cartProduct) => {
+    return cartProduct.id === existingProduct.id
+      ? { ...cartProduct, quantity: cartProduct.quantity - 1 }
+      : cartProduct;
+  });
+};
+
+const removeProductFromCart = (existingProduct) => {
+  cart = cart.filter((product) => product.id !== existingProduct.id);
+  checkCartState();
+};
+
+const handleMinusBtnEvent = (id) => {
+  const existingCartProduct = cart.find((item) => item.id === id);
+
+  if (existingCartProduct.quantity === 1) {
+    if (window.confirm('¿Desea Eliminar el producto del carrito?')) {
+      removeProductFromCart(existingCartProduct);
+    }
+    return;
+  }
+  substractProductUnit(existingCartProduct);
+};
+
+const handlePlusBtnEvent = (id) => {
+  const existingCartProduct = cart.find((item) => item.id === id);
+  addUnitToProduct(existingCartProduct);
+};
+
+const handleQuantity = (e) => {
+  if (e.target.classList.contains('down')) {
+    handleMinusBtnEvent(e.target.dataset.id);
+  } else if (e.target.classList.contains('up')) {
+    handlePlusBtnEvent(e.target.dataset.id);
+  }
+  checkCartState();
+};
+
+const resetCartItems = () => {
+  cart = [];
+  checkCartState();
+};
+
+const completeCartAction = (confirmMsg, successMsg) => {
+  if (!cart.length) return;
+  if (window.confirm(confirmMsg)) {
+    resetCartItems();
+    alert(successMsg);
+  }
+};
+//
+//
+const completeBuy = () => {
+  completeCartAction(
+    '¿Desea completar su compra?',
+    'La compra se ha realizado correctamente'
+  );
+};
+
+const deleteCart = () => {
+  completeCartAction(
+    '¿Está seguro de que desea vaciar el carrito?',
+    'No hay productos en el carrito'
+  );
+};
+
 const init = () => {
     renderCardsRecom();
     renderCards();
@@ -302,13 +367,13 @@ const init = () => {
     overlay.addEventListener('click', closeOnOverlayClick);
     window.addEventListener('scroll', closeOnScroll);
     closeBtn.addEventListener('click', closeOnClickButton);
-    document.addEventListener("DOMContentLoaded", renderCart);
-    document.addEventListener("DOMContentLoaded", showTotal);
-    renderFood.addEventListener("click", addProduct);
-    renderRecom.addEventListener("click", addProduct);
-    // productsCart.addEventListener("click", handleQuantity);
-    // buyBtn.addEventListener("click", completeBuy);
-    // deleteBtn.addEventListener("click", deleteCart);
+    document.addEventListener('DOMContentLoaded', renderCart);
+    document.addEventListener('DOMContentLoaded', showTotal);
+    renderFood.addEventListener('click', addProduct);
+    renderRecom.addEventListener('click', addProduct);
+    productsCart.addEventListener('click', handleQuantity);
+    buyBtn.addEventListener('click', completeBuy);
+    deleteBtn.addEventListener('click', deleteCart);
     disableBtn(buyBtn);
     disableBtn(deleteBtn);
 };
