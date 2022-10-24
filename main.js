@@ -46,7 +46,7 @@ const renderCard = (food) => {
     <h3>${name}</h3>
     <p>${description}</p>
     <div class="precio">
-        <span class="color">${prize}</span>
+        <span class="color">$${prize}</span>
         <button class="btn-add"
         data-id="${id}"
         data-name="${name}"
@@ -118,7 +118,7 @@ const renderCardRecom = (food) => {
   <div class="card-text">
       <h3>${name}</h3>
       <p>${description}</p>
-      <span class="color">${prize}</span>
+      <span class="color">$${prize}</span>
   </div>
       <button class="btn-add"
       data-id="${id}"
@@ -198,7 +198,7 @@ const renderCartProduct = (cartProduct) => {
             <div class="cart-info">
                 <h3>${name}</h3>
                 <p>${description}</p>
-                <span class="color">${prize}</span>
+                <span class="color">$${prize}</span>
             </div>
             <div class="buttons">
                 <span class="quantity-handler down" data-id=${id}><div class="menos"></div></span>
