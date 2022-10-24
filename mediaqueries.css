@@ -138,7 +138,9 @@
     
     .info button {
         width: 136px;
-        height: 35px;
+        height: 50px;
+        font-size: 1em;
+        font-weight: 600;
     }
     
     .info-img {
@@ -152,7 +154,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin: 60px 0 0 0;
+        margin: 30px 0 0 0;
         padding: 0;
     }
 
@@ -177,17 +179,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px;
-        padding: 10px;
+        gap: 20px;
+        padding: 15px;
         border-radius: 15px;
         box-shadow: 0px 0px 8px rgba(1, 2, 7, 0.5);
-        width: 80vw;
+        width: 80%;
         height: 150px;
     }
 
     .card img {
-        width: 150px;
-        height: 120px;
+        width: 190px;
+        height: 110px;
         border-radius: 16px;
         object-fit: cover;
     }
@@ -207,6 +209,8 @@
     .card button {
         width: 80px;
         height: 60px;
+        font-size: 16PX;
+        font-weight: 700;
     }
 
     /* Seccion Categorias */

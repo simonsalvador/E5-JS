@@ -52,7 +52,7 @@ const renderCard = (food) => {
         data-name="${name}"
         data-description="${description}"
         data-prize="${prize}"
-        data-img="${img}">Agregar</button>
+        data-img="${img}">Add</button>
     </div>
     </div>
     `
@@ -125,7 +125,7 @@ const renderCardRecom = (food) => {
       data-name="${name}"
       data-description="${description}"
       data-prize="${prize}"
-      data-img="${img}">Agregar</button>
+      data-img="${img}">Add</button>
 </div>
   `
 };
