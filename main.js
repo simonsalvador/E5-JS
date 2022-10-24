@@ -275,15 +275,14 @@ const showSuccessModal = (msg) => {
 
 const addProduct = (e) => {
   if (!e.target.classList.contains("btn-add")) return;
-  const { id, name, description, prize, img } = e.target.dataset;
 
+  const { id, name, description, prize, img } = e.target.dataset;
   const product = createProductData(id, name, description, prize, img);
-  //El producto exista en el carrito
+  
 if (isExistingCartProduct(product)) {
   addUnitToProduct(product);
   showSuccessModal("Se agregó una unidad del producto al carrito");
 } else {
-  //Que no exista el product
   createCartProduct(product);
   showSuccessModal("El producto se ha agregado al carrito");
 }
