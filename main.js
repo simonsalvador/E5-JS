@@ -52,7 +52,7 @@ const renderCard = (food) => {
         data-name="${name}"
         data-description="${description}"
         data-prize="${prize}"
-        data-img="${img}">Add</button>
+        data-img="${img}">Agregar</button>
     </div>
     </div>
     `
@@ -103,9 +103,9 @@ const applyFilter = (e) => {
     } else {
       renderProducts(e.target.dataset.category);
       if (e.target.classList.contains("category")) {
-        title.innerHTML = `${e.target.dataset.category}`
-      } else if (!e.target.dataset.category) {
         title.innerHTML = '';
+        title.innerHTML = `${e.target.dataset.category}`
+        return
       }
     };
 };
@@ -125,7 +125,7 @@ const renderCardRecom = (food) => {
       data-name="${name}"
       data-description="${description}"
       data-prize="${prize}"
-      data-img="${img}">Add</button>
+      data-img="${img}">Agregar</button>
 </div>
   `
 };
