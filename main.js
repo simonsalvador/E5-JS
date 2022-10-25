@@ -218,11 +218,10 @@ const renderCart = () => {
 
 const getCartTotal = () => {
   return cart.reduce(
-    (acc, cur) => acc + Number(cur.prize) * Number(cur.quantity),
-    0
+    (acc, cur) => acc + Number(cur.prize) * Number(cur.quantity), 0
   );
 };
-
+ 
 const showTotal = () => {
   total.innerHTML = `$${getCartTotal().toFixed(2)}`;
   subTotal.innerHTML = `$${getCartTotal().toFixed(2)}`;
@@ -243,6 +242,7 @@ const addUnitToProduct = (product) => {
     ? {...cartProduct, quantity: cartProduct.quantity + 1}
     : cartProduct;
   });
+ 
 };
 
 const createCartProduct = (product) => {
