@@ -12,25 +12,29 @@
 <body>
     <div class="contenedor">
         <section class="contenedorS">
-            <form class="form" action="">
+            <form class="form" id="form" action="">
                 <fieldset>
                     <legend>Crea tu propia cuenta</legend>
                     <div class="contenedorDiv">
                         <div class="campo">
                             <label for="">Nombre</label>
-                            <input type="text" name="nombre" class="nombre" placeholder="Tu Nombre">
+                            <input type="text" id="username" name="nombre" class="nombre" placeholder="Tu Nombre" autocomplete="off">
+                            <small></small>
                         </div>
                         <div class="campo">
                             <label for="">E-mail</label>
-                            <input type="text" name="email" class="email" placeholder="Tu E-mail">
+                            <input type="text" id="email" name="email" class="email" placeholder="Tu E-mail" autocomplete="off">
+                            <small></small>
                         </div>
                         <div class="campo">
                             <label for="">Teléfono</label>
-                            <input type="tel" name="telefono" class="telefono" placeholder="Tu Teléfono">
+                            <input type="tel" id="phone" name="telefono" class="telefono" placeholder="Tu Teléfono" autocomplete="off">
+                            <small></small>
                         </div>
                         <div class="campo">
                             <label for="">Contraseña</label>
-                            <input type="password" name="contrasena" class="contrasena" placeholder="Tu Contraseña">
+                            <input type="password" id="password" name="contrasena" class="contrasena" placeholder="Tu Contraseña" autocomplete="off">
+                            <small></small>
                         </div>
                         <div class="campo">
                             <label for="">Re-contraseña</label>
@@ -45,6 +49,7 @@
             </form>
         </section>
     </div>
+    <script src="login.js"></script>
 </body>
 
 </html>
